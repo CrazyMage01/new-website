@@ -1,18 +1,18 @@
 # new-website
 
-Personal site for Sam Smith — plain HTML/CSS static site, no build step.
+Personal site for Sam Smith — a single self-contained `index.html`, no build step.
 
 ## Structure
 
-- `index.html` — single-page site (hero, about, work, contact)
-- `css/style.css` — all styling; light/dark via `prefers-color-scheme`
+- `index.html` — everything: markup, styles (inline `<style>`), and a small script for the temporary font-switcher panel
 
 ## Working on this repo
 
 - No build step: open `index.html` in a browser to preview.
-- Content placeholders are marked with `<!-- TODO: ... -->` comments in `index.html`.
+- Content placeholders are marked with `<!-- TODO: ... -->` comments.
+- The floating font-switcher panel (bottom-right) is a dev tool: pick heading/body fonts in the browser, then hard-code the choices into `:root` and delete the panel, its CSS block, and the script before shipping.
 - Multiple Claude sessions may work on this repo — pull before starting, push when done, keep changes small and self-contained.
 
 ## Deploying
 
-Intended for GitHub Pages: Settings → Pages → deploy from `main` branch, root folder.
+GitHub Pages: Settings → Pages → deploy from the default branch, root folder.

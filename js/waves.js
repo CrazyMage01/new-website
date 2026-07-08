@@ -53,6 +53,30 @@
     if (easeSel) easeSel.onchange = e => FX.easing = e.target.value;
   }
 
+  // --- Copy-to-clipboard buttons (e.g. the Email pill) ---
+  document.querySelectorAll('[data-copy]').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const text = btn.dataset.copy;
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch {
+        // fallback for browsers without clipboard API permission
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+      }
+      const original = btn.textContent;
+      btn.textContent = 'Copied!';
+      btn.disabled = true;
+      setTimeout(() => { btn.textContent = original; btn.disabled = false; }, 1500);
+    });
+  });
+
   // --- Reveal-on-scroll: elements with .reveal rise in as they enter the viewport ---
   const targets = [...document.querySelectorAll('.reveal')];
   if (targets.length && !reduced && 'IntersectionObserver' in window) {

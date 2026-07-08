@@ -118,23 +118,6 @@ ul.rows .meta { opacity: 0.65; font-size: 0.9em; white-space: nowrap; }
 .updated { margin-top: 18px; opacity: 0.55; font-size: 0.85em; font-style: italic; }
 header .updated { margin-top: 10px; }
 
-/* Memo page: compact table-like presentation */
-.cols { columns: 2; column-gap: 32px; }
-.cols li { break-inside: avoid; }
-@media (max-width: 560px) { .cols { columns: 1; } }
-.skillgrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-.skillcard {
-  background: color-mix(in srgb, var(--lavender) 22%, var(--cream));
-  border-radius: 14px;
-  padding: 16px 18px;
-}
-.skillcard h3 { font-family: var(--heading-font); font-weight: 500; font-size: 1rem; margin-bottom: 6px; }
-.skillcard p { font-size: 0.9em; opacity: 0.8; }
-.twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 32px; align-items: start; }
-@media (max-width: 560px) {
-  .skillgrid, .twocol { grid-template-columns: 1fr; }
-}
-
 /* Collapsible Past section under Now */
 .past { margin-top: 24px; }
 .past summary {

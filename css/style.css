@@ -112,12 +112,13 @@ ul.rows .meta { opacity: 0.65; font-size: 0.9em; white-space: nowrap; }
 .updated { margin-top: 18px; opacity: 0.55; font-size: 0.85em; font-style: italic; }
 
 /* Page cards (home → subpages) */
-.pagecards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+.pagecards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+@media (max-width: 560px) { .pagecards { grid-template-columns: 1fr; } }
 .pagecard {
   display: block;
   background: var(--cream);
   border-radius: 14px;
-  padding: 20px 22px;
+  padding: 16px 18px;
   text-decoration: none;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }

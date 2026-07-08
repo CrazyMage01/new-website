@@ -110,6 +110,7 @@ ul.rows .meta { opacity: 0.65; font-size: 0.9em; white-space: nowrap; }
 .band-butter .pill { background: var(--cream); }
 
 .updated { margin-top: 18px; opacity: 0.55; font-size: 0.85em; font-style: italic; }
+header .updated { margin-top: 10px; }
 
 /* Page cards (home → subpages) */
 .pagecards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }

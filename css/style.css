@@ -118,7 +118,8 @@ header .updated { margin-top: 10px; }
   cursor: pointer;
   font-family: var(--heading-font);
   font-weight: var(--h2-weight, 500);
-  font-size: 1.55rem;
+  font-size: 1.3rem;
+  opacity: 0.8;
   width: fit-content;
   list-style: none;
 }
@@ -130,7 +131,7 @@ header .updated { margin-top: 10px; }
   transition: transform 0.2s ease;
 }
 .past[open] summary::before { transform: rotate(90deg); }
-.past summary:hover { opacity: 0.75; }
+.past summary:hover { opacity: 1; }
 .past[open] summary { margin-bottom: 8px; }
 .past ul.plain { font-size: 0.95em; }
 /* bubbles that only appear with the expanded Then list, behind its text */

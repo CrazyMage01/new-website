@@ -7,7 +7,7 @@
 <meta name="description" content="AI Safety fieldbuilding — helping people discover their potential for impact.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400&family=Sora:wght@400;600&family=Outfit:wght@400;500;700&family=Nunito:wght@400;700;900&family=Space+Grotesk:wght@400;500;700&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Sora:wght@400;600&family=Young+Serif&family=Gloock&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Unbounded:wght@400;500;900&family=Instrument+Serif&family=Hanken+Grotesk:wght@400;600&family=Schibsted+Grotesk:wght@400;600&family=Atkinson+Hyperlegible:wght@400;700&family=Wix+Madefor+Text:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --lavender: #cbbcec;
@@ -32,10 +32,10 @@
 
   .inner { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 
-  header { padding: 100px 0 60px; }
+  header { padding: 48px 0 32px; }
   h1 {
     font-family: var(--heading-font);
-    font-weight: 900;
+    font-weight: var(--h1-weight, 900);
     font-size: clamp(2.8rem, 9vw, 4.6rem);
     line-height: 1.02;
     letter-spacing: -0.02em;
@@ -54,7 +54,7 @@
 
   h2 {
     font-family: var(--heading-font);
-    font-weight: 600;
+    font-weight: var(--h2-weight, 600);
     font-size: 1.55rem;
     margin-bottom: 18px;
   }
@@ -229,21 +229,21 @@
 <div id="switcher">
   <label>heading
     <select id="head-sel">
-      <option value="'Fraunces', serif">Fraunces</option>
-      <option value="'DM Serif Display', serif">DM Serif Display</option>
-      <option value="'Nunito', sans-serif">Nunito</option>
-      <option value="'Outfit', sans-serif">Outfit</option>
-      <option value="'Sora', sans-serif">Sora</option>
-      <option value="'Space Grotesk', sans-serif">Space Grotesk</option>
+      <option value="'Fraunces', serif" data-w1="900" data-w2="600">Fraunces</option>
+      <option value="'Young Serif', serif" data-w1="400" data-w2="400">Young Serif</option>
+      <option value="'Gloock', serif" data-w1="400" data-w2="400">Gloock</option>
+      <option value="'Instrument Serif', serif" data-w1="400" data-w2="400">Instrument Serif</option>
+      <option value="'Bricolage Grotesque', sans-serif" data-w1="800" data-w2="600">Bricolage Grotesque</option>
+      <option value="'Unbounded', sans-serif" data-w1="900" data-w2="500">Unbounded</option>
     </select>
   </label>
   <label>body
     <select id="body-sel">
       <option value="'Sora', sans-serif">Sora</option>
-      <option value="'Outfit', sans-serif">Outfit</option>
-      <option value="'Nunito', sans-serif">Nunito</option>
-      <option value="'Space Grotesk', sans-serif">Space Grotesk</option>
-      <option value="'Fraunces', serif">Fraunces</option>
+      <option value="'Hanken Grotesk', sans-serif">Hanken Grotesk</option>
+      <option value="'Schibsted Grotesk', sans-serif">Schibsted Grotesk</option>
+      <option value="'Atkinson Hyperlegible', sans-serif">Atkinson Hyperlegible</option>
+      <option value="'Wix Madefor Text', sans-serif">Wix Madefor Text</option>
     </select>
   </label>
   <span class="hint">pick fonts, then delete this panel</span>
@@ -251,7 +251,12 @@
 
 <script>
   const root = document.documentElement.style;
-  document.getElementById('head-sel').onchange = e => root.setProperty('--heading-font', e.target.value);
+  document.getElementById('head-sel').onchange = e => {
+    const o = e.target.selectedOptions[0];
+    root.setProperty('--heading-font', o.value);
+    root.setProperty('--h1-weight', o.dataset.w1);
+    root.setProperty('--h2-weight', o.dataset.w2);
+  };
   document.getElementById('body-sel').onchange = e => root.setProperty('--body-font', e.target.value);
 
   // Waves rise as they scroll into view (scrubbed: reversing scroll lowers them again).

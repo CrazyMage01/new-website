@@ -1,5 +1,6 @@
 :root {
   --lavender: #cbbcec;
+  --plum: #a98bd9;
   --cream: #faf5e9;
   --butter: #f6e69c;
   --charcoal: #2e2a33;
@@ -50,7 +51,9 @@ h1 {
 .band-cream  { background: var(--cream); }
 .band-butter { background: var(--butter); }
 .band-lavender { background: var(--lavender); }
-.band-cream, .band-butter, .band-lavender { position: relative; overflow: hidden; }
+/* plum band gets its own vertical breathing room */
+.band-plum { background: var(--plum); padding: 16px 0 24px; }
+.band-cream, .band-butter, .band-lavender, .band-plum { position: relative; overflow: hidden; }
 /* note: sections carry no vertical padding (.inner wins specificity);
    band breathing room comes from the wave svgs above/below them */
 section { position: relative; }

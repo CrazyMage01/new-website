@@ -4,7 +4,12 @@ Personal site for Sam Smith — a single self-contained `index.html`, no build s
 
 ## Structure
 
-- `index.html` — everything: markup, styles (inline `<style>`), and a small script for the temporary font-switcher panel
+- `index.html` — home: hero, Now, page cards, contact
+- `writing.html` / `projects.html` — subpages, same band-and-wave layout
+- `css/style.css` — shared styles (light theme, wave bands, dev panels)
+- `js/waves.js` — shared scroll-scrubbed wave engine + reveal-on-scroll
+
+Dev panels (font switcher, wave lab) live on `index.html` only.
 
 ## Working on this repo
 

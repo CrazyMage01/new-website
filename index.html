@@ -14,8 +14,10 @@
     --cream: #faf5e9;
     --butter: #f6e69c;
     --charcoal: #2e2a33;
-    --heading-font: 'Fraunces', serif;
+    --heading-font: 'Unbounded', sans-serif;
     --body-font: 'Sora', sans-serif;
+    --h1-weight: 900;
+    --h2-weight: 500;
     --max: 640px;
   }
 
@@ -32,11 +34,11 @@
 
   .inner { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 
-  header { padding: 48px 0 32px; }
+  header { padding: 40px 0 20px; }
   h1 {
     font-family: var(--heading-font);
     font-weight: var(--h1-weight, 900);
-    font-size: clamp(2.8rem, 9vw, 4.6rem);
+    font-size: clamp(2.2rem, 7.5vw, 3.6rem);
     line-height: 1.02;
     letter-spacing: -0.02em;
   }
@@ -45,12 +47,15 @@
   /* Each divider is most of a screen tall; the crest sweeps up through it on scroll.
      -1px bottom margin overlaps the next band to hide the sub-pixel seam. */
   .wave { display: block; width: 100%; height: 22vh; margin-bottom: -1px; }
+  /* first divider is shorter: it's mostly risen on load, and a tight hero
+     lets the Now section share the opening viewport */
+  .wave:first-of-type { height: 13vh; }
   .wave path { will-change: transform; }
   @media (max-width: 480px) { .wave { height: 18vh; } }
 
   .band-cream  { background: var(--cream); }
   .band-butter { background: var(--butter); }
-  section { padding: 48px 0 64px; }
+  section { padding: 36px 0 56px; }
 
   h2 {
     font-family: var(--heading-font);
@@ -229,12 +234,12 @@
 <div id="switcher">
   <label>heading
     <select id="head-sel">
+      <option value="'Unbounded', sans-serif" data-w1="900" data-w2="500" selected>Unbounded</option>
       <option value="'Fraunces', serif" data-w1="900" data-w2="600">Fraunces</option>
       <option value="'Young Serif', serif" data-w1="400" data-w2="400">Young Serif</option>
       <option value="'Gloock', serif" data-w1="400" data-w2="400">Gloock</option>
       <option value="'Instrument Serif', serif" data-w1="400" data-w2="400">Instrument Serif</option>
       <option value="'Bricolage Grotesque', sans-serif" data-w1="800" data-w2="600">Bricolage Grotesque</option>
-      <option value="'Unbounded', sans-serif" data-w1="900" data-w2="500">Unbounded</option>
     </select>
   </label>
   <label>body

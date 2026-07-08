@@ -58,7 +58,14 @@ h2 {
 
 p + p { margin-top: 1em; }
 
-a { color: inherit; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+/* skip-ink:none + generous offset keep the hover squiggle continuous,
+   clearing descenders (g, y, p) instead of being broken by them */
+a {
+  color: inherit;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.32em;
+  text-decoration-skip-ink: none;
+}
 a:hover { text-decoration-style: wavy; }
 
 /* Bullet lists */

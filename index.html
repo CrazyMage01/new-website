@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sam Smith</title>
-<meta name="description" content="Sam Smith — programme director and AI safety field-builder.">
+<meta name="description" content="AI Safety fieldbuilding — helping people discover their potential for impact.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400&family=Sora:wght@400;600&family=Outfit:wght@400;500;700&family=Nunito:wght@400;700;900&family=Space+Grotesk:wght@400;500;700&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -14,7 +14,6 @@
     --cream: #faf5e9;
     --butter: #f6e69c;
     --charcoal: #2e2a33;
-    --muted: #5f5868;
     --heading-font: 'Fraunces', serif;
     --body-font: 'Sora', sans-serif;
     --max: 640px;
@@ -26,64 +25,86 @@
     background: var(--lavender);
     color: var(--charcoal);
     font-family: var(--body-font);
-    font-size: 17px;
+    font-size: 16.5px;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
 
   .inner { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 
-  /* Hero */
-  header { padding: 110px 0 70px; }
+  header { padding: 100px 0 60px; }
   h1 {
     font-family: var(--heading-font);
     font-weight: 900;
-    font-size: clamp(3rem, 10vw, 5rem);
+    font-size: clamp(2.8rem, 9vw, 4.6rem);
     line-height: 1.02;
     letter-spacing: -0.02em;
   }
-  .tagline { margin-top: 16px; color: var(--charcoal); opacity: 0.75; max-width: 40ch; }
+  .tagline { margin-top: 16px; opacity: 0.8; max-width: 44ch; }
 
-  /* Wave dividers */
   .wave { display: block; width: 100%; height: 90px; }
   @media (max-width: 480px) { .wave { height: 56px; } }
 
-  /* Sections */
   .band-cream  { background: var(--cream); }
   .band-butter { background: var(--butter); }
-  .band-charcoal { background: var(--charcoal); color: var(--cream); }
-  section { padding: 56px 0 72px; }
+  section { padding: 48px 0 64px; }
 
   h2 {
     font-family: var(--heading-font);
     font-weight: 600;
-    font-size: 1.6rem;
-    margin-bottom: 20px;
+    font-size: 1.55rem;
+    margin-bottom: 18px;
   }
-
-  p + p { margin-top: 1em; }
 
   a { color: inherit; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
-  a:hover { opacity: 0.7; }
+  a:hover { opacity: 0.65; }
 
-  ul.projects { list-style: none; }
-  ul.projects li {
-    padding: 16px 0;
-    border-bottom: 1.5px solid color-mix(in srgb, var(--charcoal) 25%, transparent);
+  ul.plain { list-style: none; }
+  ul.plain li {
+    padding: 6px 0 6px 26px;
+    position: relative;
+  }
+  ul.plain li::before {
+    content: "";
+    position: absolute;
+    left: 4px; top: 0.72em;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--lavender);
+  }
+  .band-cream ul.plain li::before { background: var(--lavender); }
+  .band-butter ul.plain li::before { background: var(--cream); }
+
+  ul.rows { list-style: none; }
+  ul.rows li {
+    padding: 13px 0;
+    border-bottom: 1.5px solid color-mix(in srgb, var(--charcoal) 22%, transparent);
     display: flex;
     flex-wrap: wrap;
-    gap: 4px 16px;
-    justify-content: space-between;
+    gap: 4px 12px;
     align-items: baseline;
   }
-  ul.projects li:first-child { border-top: 1.5px solid color-mix(in srgb, var(--charcoal) 25%, transparent); }
-  ul.projects .desc { opacity: 0.65; font-size: 0.95em; }
+  ul.rows li:first-child { border-top: 1.5px solid color-mix(in srgb, var(--charcoal) 22%, transparent); }
+  ul.rows .grow { flex: 1; min-width: 180px; }
+  ul.rows .meta { opacity: 0.65; font-size: 0.9em; white-space: nowrap; }
 
-  .now-date { opacity: 0.6; font-size: 0.9em; }
+  .pill {
+    font-size: 0.72em;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: var(--cream);
+    border: 1.5px solid color-mix(in srgb, var(--charcoal) 30%, transparent);
+    white-space: nowrap;
+  }
+  .band-cream .pill { background: var(--lavender); border-color: transparent; }
 
-  footer.band-charcoal { padding: 44px 0 60px; }
-  footer .links { display: flex; gap: 24px; flex-wrap: wrap; }
+  .updated { margin-top: 18px; opacity: 0.55; font-size: 0.85em; font-style: italic; }
+
+  footer { background: var(--charcoal); color: var(--cream); padding: 44px 0 64px; }
+  footer .links { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 14px; }
   footer a { color: var(--butter); }
+  footer .pledge { opacity: 0.7; font-size: 0.9em; }
 
   /* ---------- Font switcher — delete this block + panel before shipping ---------- */
   #switcher {
@@ -108,8 +129,7 @@
 <header>
   <div class="inner">
     <h1>Sam Smith</h1>
-    <p class="tagline">Programme Director at Leaf Courses — building pathways into serious work on AI safety.</p>
-    <!-- TODO: Sam — tweak the tagline to your own voice -->
+    <p class="tagline">AI Safety fieldbuilding. Currently at Leaf, Non-Trivial, and Constellation.</p>
   </div>
 </header>
 
@@ -119,9 +139,16 @@
 
 <div class="band-cream">
   <section class="inner">
-    <h2>About</h2>
-    <p>I work on AI safety field-building: designing programmes, courses, and communities that grow the number of people doing serious work on AI safety.</p>
-    <!-- TODO: add 1–2 more sentences — background, what you care about, what you're looking for -->
+    <h2>Now</h2>
+    <ul class="plain">
+      <li>Programme Director at <a href="https://leaf.courses">Leaf</a> — running the Summer 2026 cohort (600 students)</li>
+      <li><a href="https://generatorresidency.org/">Generator</a> Resident at Constellation in Berkeley</li>
+      <li>Special Projects at <a href="https://www.non-trivial.org/">Non-Trivial</a></li>
+      <li>Facilitating <a href="https://bluedot.org/">BlueDot</a>'s AGI Strategy course</li>
+      <li>Finishing an MSci in Maths &amp; Philosophy at Bristol</li>
+      <li>Bouldering, guitar, D&amp;D</li>
+    </ul>
+    <p class="updated">Last updated July 2026</p>
   </section>
 </div>
 
@@ -132,12 +159,12 @@
 <div class="band-butter">
   <section class="inner">
     <h2>Projects</h2>
-    <ul class="projects">
-      <li><a href="https://leaf.courses">Leaf Courses</a><span class="desc">programmes for early-career AI safety researchers</span></li>
-      <!-- TODO: check the Leaf URL above is right -->
-      <li><a href="#">AIS Fieldbuilders Coordination Group</a><span class="desc">co-organizing a ~14-org working group</span></li>
-      <!-- TODO: confirm how you want to describe the coordination group publicly, and link the intro blog post when it's live -->
-      <li><a href="#">Something you wrote</a><span class="desc">2026</span></li>
+    <ul class="rows">
+      <li><span class="grow"><a href="https://crazymage01.github.io/idea-capture-tool/">Idea Capture Tool</a></span><span class="pill">Done?</span><span class="meta">capture ideas before they vanish</span></li>
+      <li><span class="grow"><a href="https://claude.ai/public/artifacts/b217cfcf-6dcb-4457-935c-e5fdc7359714">AI Timelines Forecasting</a></span><span class="pill">Buggy MVP</span><span class="meta">build your own timeline distribution</span></li>
+      <li><span class="grow"><a href="https://claude.ai/public/artifacts/9ea200ee-2138-4e7d-a1fe-645bb594f4d4">Modular Day Builder</a></span><span class="pill">MVP</span><span class="meta">themed days over daily optimisation</span></li>
+      <li><span class="grow"><a href="https://claude.ai/public/artifacts/c858ae9f-5a8b-48ce-ac47-2e0c5bbad503">Progress Celebration Bar</a></span><span class="pill">In progress</span><span class="meta">celebrate rest as much as work</span></li>
+      <li><span class="grow"><a href="https://docs.google.com/document/d/1Zbkgr4hvrXQ8lJthuhCdBlMEi1sxY9-Zh2nKa_nHAZM/edit?tab=t.0#heading=h.4hcg30enz4t4">Career Memo Template</a></span><span class="pill">Template</span><span class="meta">make your career interests legible</span></li>
     </ul>
   </section>
 </div>
@@ -148,9 +175,14 @@
 
 <div class="band-cream">
   <section class="inner">
-    <h2>Now</h2>
-    <p>Running programmes at Leaf Courses and helping coordinate the AI safety field-building working group. <span class="now-date">(July 2026)</span></p>
-    <!-- TODO: keep this fresh — update the date whenever you edit it -->
+    <h2>Writing</h2>
+    <p style="margin-bottom:16px;">I write at <a href="https://sdms2005.substack.com/">Samstack</a> and contribute to the <a href="https://fieldbuilders.substack.com/">Fieldbuilders Blog</a>.</p>
+    <ul class="rows">
+      <li><span class="grow"><a href="https://docs.google.com/document/d/1dkTsAObuIuDlO6MzcIApWamaXWFVQyk-lD1k3ougWOw/edit?tab=t.0#heading=h.fxeegmxedylt">Sam's Career Memo</a></span><span class="meta">Feb 2026</span></li>
+      <li><span class="grow"><a href="https://docs.google.com/document/d/1_gLhrcRXKfF56BW9A5Hanfbn1QyzPZ1JGap0Dik2nH4/edit?tab=t.6rext7ock3e#heading=h.w9ijn6rtl5yq">Meta Field Strategy Doc</a></span><span class="meta">Feb 2026</span></li>
+      <li><span class="grow"><a href="https://forum.effectivealtruism.org/posts/agFxcinYtBqjDgCNk/sam-s-hot-takes-on-ea-community-building">Hot Takes on EA Community Building</a></span><span class="meta">Sep 2025</span></li>
+      <li><span class="grow"><a href="https://docs.google.com/document/d/1PQtZUdHheRI2ToK2wO-T0kseoH8MrLVArxvrcnifDT0/edit?tab=t.0#heading=h.7grltst8ucg2">Beyond the Resume</a></span><span class="meta">Jun 2025</span></li>
+    </ul>
   </section>
 </div>
 
@@ -158,12 +190,14 @@
   <path d="M0 68 C280 100 520 30 780 65 C1040 98 1260 50 1440 78 L1440 120 L0 120 Z" fill="#2e2a33"/>
 </svg>
 
-<footer class="band-charcoal">
-  <div class="inner links">
-    <a href="mailto:sdms2005@gmail.com">email</a>
-    <a href="https://github.com/CrazyMage01">github</a>
-    <a href="#">twitter</a>
-    <!-- TODO: add/remove links — LinkedIn probably belongs here while job hunting -->
+<footer>
+  <div class="inner">
+    <div class="links">
+      <a href="mailto:sdms2005@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/sam-smith%F0%9F%94%B8-617315227/">LinkedIn</a>
+      <a href="https://github.com/CrazyMage01">GitHub</a>
+    </div>
+    <p class="pledge">🔸 Giving What We Can 10% pledger</p>
   </div>
 </footer>
 

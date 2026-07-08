@@ -148,6 +148,23 @@ footer .links a:hover,
 footer .links button:hover { background: var(--butter); color: var(--charcoal); transform: translateY(-2px); }
 footer .pledge { opacity: 0.7; font-size: 0.9em; }
 
+/* Quiet nav row at the very bottom, visually distinct from the contact pills */
+footer .nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+  padding-top: 16px;
+  border-top: 1px solid color-mix(in srgb, var(--cream) 18%, transparent);
+}
+footer .nav a {
+  color: var(--cream);
+  opacity: 0.65;
+  font-size: 0.85em;
+  text-decoration: none;
+}
+footer .nav a:hover { opacity: 1; text-decoration: underline wavy; text-underline-offset: 0.32em; }
+
 /* Floating decorations */
 .deco {
   position: absolute;

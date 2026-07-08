@@ -167,22 +167,3 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   .deco { animation: none; }
   html.js .reveal { opacity: 1; transform: none; transition: none; }
 }
-
-/* ---------- Dev panels (font switcher + wave lab) — delete before shipping ---------- */
-#switcher, #wavelab {
-  position: fixed; bottom: 16px; right: 16px;
-  background: var(--charcoal); color: var(--cream);
-  font-family: 'IBM Plex Mono', monospace; font-size: 12px;
-  padding: 12px 14px; border-radius: 12px;
-  display: flex; flex-direction: column; gap: 8px;
-  z-index: 10; max-width: calc(100vw - 32px);
-}
-#wavelab { right: auto; left: 16px; }
-#switcher label, #wavelab label { display: flex; align-items: center; gap: 8px; }
-#switcher select, #wavelab select {
-  font-family: inherit; font-size: 12px; flex: 1;
-  background: #423c4d; color: var(--cream);
-  border: 1px solid #5f5868; border-radius: 6px; padding: 3px 6px;
-}
-#wavelab input[type="checkbox"] { accent-color: var(--butter); }
-#switcher .hint, #wavelab .hint { opacity: 0.55; font-size: 10px; }

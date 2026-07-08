@@ -7,7 +7,7 @@
 <meta name="description" content="AI Safety fieldbuilding — helping people discover their potential for impact.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Sora:wght@400;600&family=Young+Serif&family=Gloock&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Unbounded:wght@400;500;900&family=Instrument+Serif&family=Hanken+Grotesk:wght@400;600&family=Schibsted+Grotesk:wght@400;600&family=Atkinson+Hyperlegible:wght@400;700&family=Wix+Madefor+Text:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;900&family=Sora:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -89,55 +89,6 @@
   </div>
 </footer>
 
-<!-- Wave lab — experiment panel, delete before shipping along with the losing effects -->
-<div id="wavelab">
-  <label><input type="checkbox" id="fx-depth" checked> back wave (depth)</label>
-  <label><input type="checkbox" id="fx-roll" checked> sideways roll</label>
-  <label><input type="checkbox" id="fx-bob" checked> idle bobbing</label>
-  <label>easing
-    <select id="fx-ease">
-      <option value="smooth" selected>smooth</option>
-      <option value="overshoot">overshoot</option>
-      <option value="springy">springy</option>
-    </select>
-  </label>
-  <span class="hint">wave lab — find a combo you like</span>
-</div>
-
-<!-- Font switcher — delete before shipping, then hard-code picks into :root -->
-<div id="switcher">
-  <label>heading
-    <select id="head-sel">
-      <option value="'Unbounded', sans-serif" data-w1="900" data-w2="500" selected>Unbounded</option>
-      <option value="'Fraunces', serif" data-w1="900" data-w2="600">Fraunces</option>
-      <option value="'Young Serif', serif" data-w1="400" data-w2="400">Young Serif</option>
-      <option value="'Gloock', serif" data-w1="400" data-w2="400">Gloock</option>
-      <option value="'Instrument Serif', serif" data-w1="400" data-w2="400">Instrument Serif</option>
-      <option value="'Bricolage Grotesque', sans-serif" data-w1="800" data-w2="600">Bricolage Grotesque</option>
-    </select>
-  </label>
-  <label>body
-    <select id="body-sel">
-      <option value="'Sora', sans-serif">Sora</option>
-      <option value="'Hanken Grotesk', sans-serif">Hanken Grotesk</option>
-      <option value="'Schibsted Grotesk', sans-serif">Schibsted Grotesk</option>
-      <option value="'Atkinson Hyperlegible', sans-serif">Atkinson Hyperlegible</option>
-      <option value="'Wix Madefor Text', sans-serif">Wix Madefor Text</option>
-    </select>
-  </label>
-  <span class="hint">pick fonts, then delete this panel</span>
-</div>
-
 <script src="js/waves.js"></script>
-<script>
-  const root = document.documentElement.style;
-  document.getElementById('head-sel').onchange = e => {
-    const o = e.target.selectedOptions[0];
-    root.setProperty('--heading-font', o.value);
-    root.setProperty('--h1-weight', o.dataset.w1);
-    root.setProperty('--h2-weight', o.dataset.w2);
-  };
-  document.getElementById('body-sel').onchange = e => root.setProperty('--body-font', e.target.value);
-</script>
 </body>
 </html>

@@ -112,6 +112,20 @@ ul.rows .meta { opacity: 0.65; font-size: 0.9em; white-space: nowrap; }
 .updated { margin-top: 18px; opacity: 0.55; font-size: 0.85em; font-style: italic; }
 header .updated { margin-top: 10px; }
 
+/* Collapsible Past section under Now */
+.past { margin-top: 24px; }
+.past summary {
+  cursor: pointer;
+  font-family: var(--heading-font);
+  font-weight: var(--h2-weight, 500);
+  font-size: 1.05rem;
+  opacity: 0.7;
+  width: fit-content;
+}
+.past summary:hover { opacity: 1; }
+.past[open] summary { margin-bottom: 8px; }
+.past ul.plain { font-size: 0.95em; }
+
 /* Page cards (home → subpages) */
 .pagecards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 @media (max-width: 560px) { .pagecards { grid-template-columns: 1fr; } }

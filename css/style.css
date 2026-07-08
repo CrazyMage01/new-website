@@ -1,5 +1,5 @@
 :root {
-  --lavender: #cbbcec;
+  --lavender: #a98bd9;
   --cream: #faf5e9;
   --butter: #f6e69c;
   --charcoal: #2e2a33;
@@ -215,4 +215,9 @@ html.js .reveal.visible { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   .deco { animation: none; }
   html.js .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* On small screens, keep only the first two bubbles per band so they stay a garnish */
+@media (max-width: 600px) {
+  span.deco:nth-of-type(n+3) { display: none; }
 }

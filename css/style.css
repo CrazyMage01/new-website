@@ -132,10 +132,9 @@ header .updated { margin-top: 10px; }
 }
 .skillgrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
 .skillcard {
-  background: #fffdf4;
+  background: color-mix(in srgb, var(--plum) 45%, var(--cream));
   border-radius: 14px;
   padding: 16px 18px;
-  box-shadow: 0 2px 10px color-mix(in srgb, var(--charcoal) 8%, transparent);
 }
 .skillcard h3 { font-family: var(--heading-font); font-weight: 500; font-size: 1rem; margin-bottom: 6px; }
 .skillcard p { font-size: 0.9em; opacity: 0.8; }

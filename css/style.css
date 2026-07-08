@@ -220,6 +220,6 @@ html.js .reveal.visible { opacity: 1; transform: none; }
 /* On small screens: fewer, fainter bubbles, and let row descriptions wrap */
 @media (max-width: 600px) {
   span.deco:nth-of-type(n+3) { display: none; }
-  .deco { opacity: 0.15 !important; }
+  .deco { opacity: 0.22 !important; }
   ul.rows .meta { white-space: normal; }
 }

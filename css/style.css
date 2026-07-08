@@ -217,7 +217,9 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   html.js .reveal { opacity: 1; transform: none; transition: none; }
 }
 
-/* On small screens, keep only the first two bubbles per band so they stay a garnish */
+/* On small screens: fewer, fainter bubbles, and let row descriptions wrap */
 @media (max-width: 600px) {
   span.deco:nth-of-type(n+3) { display: none; }
+  .deco { opacity: 0.15 !important; }
+  ul.rows .meta { white-space: normal; }
 }

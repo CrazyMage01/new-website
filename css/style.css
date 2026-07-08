@@ -121,7 +121,16 @@ header .updated { margin-top: 10px; }
   font-size: 1.05rem;
   opacity: 0.7;
   width: fit-content;
+  list-style: none;
 }
+.past summary::-webkit-details-marker { display: none; }
+.past summary::before {
+  content: '▸';
+  display: inline-block;
+  margin-right: 9px;
+  transition: transform 0.2s ease;
+}
+.past[open] summary::before { transform: rotate(90deg); }
 .past summary:hover { opacity: 1; }
 .past[open] summary { margin-bottom: 8px; }
 .past ul.plain { font-size: 0.95em; }

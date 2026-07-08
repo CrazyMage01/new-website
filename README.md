@@ -1,6 +1,6 @@
 # new-website
 
-Personal site for Sam Smith — a single self-contained `index.html`, no build step.
+Personal site for Sam Smith. Static multi-page site, no build step.
 
 ## Structure
 

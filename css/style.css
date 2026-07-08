@@ -21,7 +21,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.inner { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+.inner { max-width: var(--max); margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
 
 /* Hero / page headers */
 header { padding: 26px 0 12px; position: relative; overflow: hidden; }
@@ -110,14 +110,42 @@ ul.rows .meta { opacity: 0.65; font-size: 0.9em; white-space: nowrap; }
 .band-butter .pill { background: var(--cream); }
 
 .updated { margin-top: 18px; opacity: 0.55; font-size: 0.85em; font-style: italic; }
+header .updated { margin-top: 10px; }
+
+/* Collapsible Past section under Now */
+.past { margin-top: 24px; }
+.past summary {
+  cursor: pointer;
+  font-family: var(--heading-font);
+  font-weight: var(--h2-weight, 500);
+  font-size: 1.3rem;
+  opacity: 0.8;
+  width: fit-content;
+  list-style: none;
+}
+.past summary::-webkit-details-marker { display: none; }
+.past summary::before {
+  content: '▸';
+  display: inline-block;
+  margin-right: 9px;
+  transition: transform 0.2s ease;
+}
+.past[open] summary::before { transform: rotate(90deg); }
+.past summary:hover { opacity: 1; }
+.past[open] summary { margin-bottom: 8px; }
+.past ul.plain { font-size: 0.95em; }
+/* bubbles that only appear with the expanded Then list, behind its text */
+.past { position: relative; }
+.past .deco { z-index: -1; }
 
 /* Page cards (home → subpages) */
-.pagecards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+.pagecards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 560px) { .pagecards { grid-template-columns: 1fr; } }
 .pagecard {
   display: block;
   background: var(--cream);
   border-radius: 14px;
-  padding: 20px 22px;
+  padding: 24px 20px 22px;
   text-decoration: none;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -128,7 +156,7 @@ ul.rows .meta { opacity: 0.65; font-size: 0.9em; white-space: nowrap; }
 .pagecard:hover .go { transform: translateX(4px); }
 
 /* Footer / contact */
-footer { background: var(--charcoal); color: var(--cream); padding: 40px 0 64px; }
+footer { background: var(--charcoal); color: var(--cream); padding: 40px 0 64px; position: relative; overflow: hidden; }
 footer h2 { color: var(--cream); }
 footer .links { display: flex; gap: 12px; flex-wrap: wrap; margin: 6px 0 18px; }
 footer .links a,
@@ -147,11 +175,29 @@ footer .links a:hover,
 footer .links button:hover { background: var(--butter); color: var(--charcoal); transform: translateY(-2px); }
 footer .pledge { opacity: 0.7; font-size: 0.9em; }
 
+/* Quiet nav row at the top of the footer, visually distinct from the contact pills */
+footer .nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 26px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid color-mix(in srgb, var(--cream) 18%, transparent);
+}
+footer .nav a {
+  color: var(--cream);
+  opacity: 0.65;
+  font-size: 0.85em;
+  text-decoration: none;
+}
+footer .nav a:hover { opacity: 1; text-decoration: underline wavy; text-underline-offset: 0.32em; }
+
 /* Floating decorations */
 .deco {
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
+  z-index: 0;
   animation: floaty 14s ease-in-out infinite alternate;
 }
 @keyframes floaty {

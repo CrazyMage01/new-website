@@ -1,7 +1,5 @@
 :root {
-  /* --lavender is the primary deep flag purple; --plum is the soft accent band */
   --lavender: #a98bd9;
-  --plum: #cbbcec;
   --cream: #faf5e9;
   --butter: #f6e69c;
   --charcoal: #2e2a33;
@@ -52,8 +50,8 @@ h1 {
 .band-cream  { background: var(--cream); }
 .band-butter { background: var(--butter); }
 .band-lavender { background: var(--lavender); }
-/* plum band gets its own vertical breathing room */
-.band-plum { background: var(--plum); padding: 16px 0 24px; }
+/* About band: same purple as the hero, with its own vertical breathing room */
+.band-plum { background: var(--lavender); padding: 16px 0 24px; }
 .band-cream, .band-butter, .band-lavender, .band-plum { position: relative; overflow: hidden; }
 /* note: sections carry no vertical padding (.inner wins specificity);
    band breathing room comes from the wave svgs above/below them */
@@ -121,18 +119,12 @@ ul.rows .meta { opacity: 0.65; font-size: 0.9em; white-space: nowrap; }
 header .updated { margin-top: 10px; }
 
 /* Memo page: compact table-like presentation */
-.chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip {
-  background: var(--plum);
-  color: var(--charcoal);
-  padding: 6px 14px;
-  border-radius: 999px;
-  font-size: 0.88em;
-  font-weight: 600;
-}
+.cols { columns: 2; column-gap: 32px; }
+.cols li { break-inside: avoid; }
+@media (max-width: 560px) { .cols { columns: 1; } }
 .skillgrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
 .skillcard {
-  background: color-mix(in srgb, var(--plum) 45%, var(--cream));
+  background: color-mix(in srgb, var(--lavender) 22%, var(--cream));
   border-radius: 14px;
   padding: 16px 18px;
 }

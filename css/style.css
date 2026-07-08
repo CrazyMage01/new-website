@@ -49,10 +49,7 @@ h1 {
 /* Bands */
 .band-cream  { background: var(--cream); }
 .band-butter { background: var(--butter); }
-.band-lavender { background: var(--lavender); }
-/* About band: same purple as the hero, with its own vertical breathing room */
-.band-plum { background: var(--lavender); padding: 16px 0 24px; }
-.band-cream, .band-butter, .band-lavender, .band-plum { position: relative; overflow: hidden; }
+.band-cream, .band-butter { position: relative; overflow: hidden; }
 /* note: sections carry no vertical padding (.inner wins specificity);
    band breathing room comes from the wave svgs above/below them */
 section { position: relative; }

@@ -217,8 +217,8 @@
   <label><input type="checkbox" id="fx-bob" checked> idle bobbing</label>
   <label>easing
     <select id="fx-ease">
+      <option value="smooth" selected>smooth</option>
       <option value="overshoot">overshoot</option>
-      <option value="smooth">smooth</option>
       <option value="springy">springy</option>
     </select>
   </label>
@@ -257,7 +257,7 @@
   // Waves rise as they scroll into view (scrubbed: reversing scroll lowers them again).
   // FX toggles are driven by the wave-lab panel; hard-code the winners and delete the rest.
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const FX = { depth: true, roll: true, bob: true, easing: 'overshoot' };
+    const FX = { depth: true, roll: true, bob: true, easing: 'smooth' };
     const easings = {
       smooth: t => 1 - Math.pow(1 - t, 3),
       overshoot: t => { const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2); },

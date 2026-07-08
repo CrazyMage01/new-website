@@ -43,6 +43,11 @@ h1 {
 .wave path { will-change: transform; }
 @media (max-width: 480px) { .wave { height: 15vh; } .wave:first-of-type { height: 11vh; } }
 
+/* Opening fold (home): hero + first band exactly fill the first viewport,
+   so the next wave always begins at the fold instead of peeking randomly */
+.fold { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; }
+.fold .band-cream { flex: 1; }
+
 /* Bands */
 .band-cream  { background: var(--cream); }
 .band-butter { background: var(--butter); }

@@ -63,7 +63,9 @@ a:hover { text-decoration-style: wavy; }
 
 /* Bullet lists */
 ul.plain { list-style: none; }
-ul.plain li { padding: 6px 0 6px 26px; position: relative; }
+ul.plain li { padding: 8px 0 8px 26px; position: relative; }
+ul.plain .role { font-weight: 600; }
+ul.plain .tag { display: block; font-size: 0.88em; opacity: 0.65; }
 ul.plain li::before {
   content: "";
   position: absolute;

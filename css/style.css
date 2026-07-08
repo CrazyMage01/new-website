@@ -12,6 +12,9 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* nothing may ever cause sideways scroll */
+html, body { overflow-x: hidden; overflow-x: clip; }
+
 body {
   background: var(--lavender);
   color: var(--charcoal);

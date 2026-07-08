@@ -7,251 +7,88 @@
 <meta name="description" content="AI Safety fieldbuilding — helping people discover their potential for impact.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400&family=Sora:wght@400;600&family=Outfit:wght@400;500;700&family=Nunito:wght@400;700;900&family=Space+Grotesk:wght@400;500;700&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --lavender: #cbbcec;
-    --cream: #faf5e9;
-    --butter: #f6e69c;
-    --charcoal: #2e2a33;
-    --heading-font: 'Fraunces', serif;
-    --body-font: 'Sora', sans-serif;
-    --max: 640px;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    background: var(--lavender);
-    color: var(--charcoal);
-    font-family: var(--body-font);
-    font-size: 16.5px;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .inner { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
-
-  header { padding: 100px 0 60px; }
-  h1 {
-    font-family: var(--heading-font);
-    font-weight: 900;
-    font-size: clamp(2.8rem, 9vw, 4.6rem);
-    line-height: 1.02;
-    letter-spacing: -0.02em;
-  }
-  .tagline { margin-top: 16px; opacity: 0.8; max-width: 44ch; }
-
-  .wave { display: block; width: 100%; height: 90px; }
-  .wave path { will-change: transform; }
-  @media (max-width: 480px) { .wave { height: 56px; } }
-
-  .band-cream  { background: var(--cream); }
-  .band-butter { background: var(--butter); }
-  section { padding: 48px 0 64px; }
-
-  h2 {
-    font-family: var(--heading-font);
-    font-weight: 600;
-    font-size: 1.55rem;
-    margin-bottom: 18px;
-  }
-
-  a { color: inherit; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
-  a:hover { opacity: 0.65; }
-
-  ul.plain { list-style: none; }
-  ul.plain li {
-    padding: 6px 0 6px 26px;
-    position: relative;
-  }
-  ul.plain li::before {
-    content: "";
-    position: absolute;
-    left: 4px; top: 0.72em;
-    width: 10px; height: 10px;
-    border-radius: 50%;
-    background: var(--lavender);
-  }
-  .band-cream ul.plain li::before { background: var(--lavender); }
-  .band-butter ul.plain li::before { background: var(--cream); }
-
-  ul.rows { list-style: none; }
-  ul.rows li {
-    padding: 13px 0;
-    border-bottom: 1.5px solid color-mix(in srgb, var(--charcoal) 22%, transparent);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 12px;
-    align-items: baseline;
-  }
-  ul.rows li:first-child { border-top: 1.5px solid color-mix(in srgb, var(--charcoal) 22%, transparent); }
-  ul.rows .grow { flex: 1; min-width: 180px; }
-  ul.rows .meta { opacity: 0.65; font-size: 0.9em; white-space: nowrap; }
-
-  .pill {
-    font-size: 0.72em;
-    font-weight: 600;
-    padding: 2px 10px;
-    border-radius: 999px;
-    background: var(--cream);
-    border: 1.5px solid color-mix(in srgb, var(--charcoal) 30%, transparent);
-    white-space: nowrap;
-  }
-  .band-cream .pill { background: var(--lavender); border-color: transparent; }
-
-  .updated { margin-top: 18px; opacity: 0.55; font-size: 0.85em; font-style: italic; }
-
-  footer { background: var(--charcoal); color: var(--cream); padding: 44px 0 64px; }
-  footer .links { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 14px; }
-  footer a { color: var(--butter); }
-  footer .pledge { opacity: 0.7; font-size: 0.9em; }
-
-  /* ---------- Font switcher — delete this block + panel before shipping ---------- */
-  #switcher {
-    position: fixed; bottom: 16px; right: 16px;
-    background: var(--charcoal); color: var(--cream);
-    font-family: 'IBM Plex Mono', monospace; font-size: 12px;
-    padding: 12px 14px; border-radius: 12px;
-    display: flex; flex-direction: column; gap: 8px;
-    z-index: 10; max-width: calc(100vw - 32px);
-  }
-  #switcher label { display: flex; align-items: center; gap: 8px; }
-  #switcher select {
-    font-family: inherit; font-size: 12px; flex: 1;
-    background: #423c4d; color: var(--cream);
-    border: 1px solid #5f5868; border-radius: 6px; padding: 3px 6px;
-  }
-  #switcher .hint { opacity: 0.55; font-size: 10px; }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;900&family=Sora:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header>
+  <span class="deco" style="width:140px;height:140px;right:-40px;top:30px;background:var(--butter);opacity:0.5;animation-duration:16s"></span>
+  <span class="deco" style="width:52px;height:52px;right:150px;top:130px;background:var(--cream);opacity:0.55;animation-duration:11s"></span>
   <div class="inner">
     <h1>Sam Smith</h1>
-    <p class="tagline">AI Safety fieldbuilding. Currently at Leaf, Non-Trivial, and Constellation.</p>
+    <p class="tagline">AI Safety Fieldbuilding and Talent Sourcing.</p>
   </div>
 </header>
 
 <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-  <path d="M0 70 C240 30 480 105 720 72 C960 40 1200 95 1440 60 L1440 120 L0 120 Z" fill="#faf5e9"/>
+  <path class="under" d="M-240 70 L0 70 C240 30 480 105 720 72 C960 40 1200 95 1440 60 L1680 60 L1680 260 L-240 260 Z" fill="#faf5e9" fill-opacity="0.5" transform="translate(80 -12)"/>
+  <path class="main" d="M-240 70 L0 70 C240 30 480 105 720 72 C960 40 1200 95 1440 60 L1680 60 L1680 260 L-240 260 Z" fill="#faf5e9"/>
 </svg>
 
 <div class="band-cream">
+  <span class="deco" style="width:90px;height:90px;left:-30px;bottom:40px;background:var(--lavender);opacity:0.35;animation-duration:13s"></span>
   <section class="inner">
-    <h2>Now</h2>
+    <h2 class="reveal">Now</h2>
     <ul class="plain">
-      <li>Programme Director at <a href="https://leaf.courses">Leaf</a> — running the Summer 2026 cohort (600 students)</li>
-      <li><a href="https://generatorresidency.org/">Generator</a> Resident at Constellation in Berkeley</li>
-      <li>Special Projects at <a href="https://www.non-trivial.org/">Non-Trivial</a></li>
-      <li>Facilitating <a href="https://bluedot.org/">BlueDot</a>'s AGI Strategy course</li>
-      <li>Finishing an MSci in Maths &amp; Philosophy at Bristol</li>
-      <li>Bouldering, guitar, D&amp;D</li>
+      <li class="reveal">
+        <span class="role">Programme Director, <a href="https://leaf.courses">Leaf</a></span>
+        <span class="tag">running the cohorts, managing staff, that sort of thing</span>
+      </li>
+      <li class="reveal">
+        <span class="role">Generator Resident, <a href="https://generatorresidency.org/">Constellation x Kairos</a></span>
+        <span class="tag">recruiting operations talent for AI safety organisations</span>
+      </li>
+      <li class="reveal">
+        <span class="role">Special Projects Lead, <a href="https://www.non-trivial.org/">Non-Trivial</a></span>
+        <span class="tag">speakers, partnerships, alumni support, and community</span>
+      </li>
     </ul>
-    <p class="updated">Last updated July 2026</p>
+    <p class="updated reveal">Last updated July 2026</p>
   </section>
 </div>
 
 <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true" style="background:#faf5e9">
-  <path d="M0 65 C260 100 500 25 760 62 C1000 95 1220 45 1440 75 L1440 120 L0 120 Z" fill="#f6e69c"/>
+  <path class="under" d="M-240 65 L0 65 C260 100 500 25 760 62 C1000 95 1220 45 1440 75 L1680 75 L1680 260 L-240 260 Z" fill="#f6e69c" fill-opacity="0.5" transform="translate(80 -12)"/>
+  <path class="main" d="M-240 65 L0 65 C260 100 500 25 760 62 C1000 95 1220 45 1440 75 L1680 75 L1680 260 L-240 260 Z" fill="#f6e69c"/>
 </svg>
 
 <div class="band-butter">
+  <span class="deco" style="width:110px;height:110px;right:-35px;top:50px;background:var(--cream);opacity:0.5;animation-duration:15s"></span>
   <section class="inner">
-    <h2>Projects</h2>
-    <ul class="rows">
-      <li><span class="grow"><a href="https://crazymage01.github.io/idea-capture-tool/">Idea Capture Tool</a></span><span class="pill">Done?</span><span class="meta">capture ideas before they vanish</span></li>
-      <li><span class="grow"><a href="https://claude.ai/public/artifacts/b217cfcf-6dcb-4457-935c-e5fdc7359714">AI Timelines Forecasting</a></span><span class="pill">Buggy MVP</span><span class="meta">build your own timeline distribution</span></li>
-      <li><span class="grow"><a href="https://claude.ai/public/artifacts/9ea200ee-2138-4e7d-a1fe-645bb594f4d4">Modular Day Builder</a></span><span class="pill">MVP</span><span class="meta">themed days over daily optimisation</span></li>
-      <li><span class="grow"><a href="https://claude.ai/public/artifacts/c858ae9f-5a8b-48ce-ac47-2e0c5bbad503">Progress Celebration Bar</a></span><span class="pill">In progress</span><span class="meta">celebrate rest as much as work</span></li>
-      <li><span class="grow"><a href="https://docs.google.com/document/d/1Zbkgr4hvrXQ8lJthuhCdBlMEi1sxY9-Zh2nKa_nHAZM/edit?tab=t.0#heading=h.4hcg30enz4t4">Career Memo Template</a></span><span class="pill">Template</span><span class="meta">make your career interests legible</span></li>
-    </ul>
+    <h2 class="reveal">Pages</h2>
+    <div class="pagecards">
+      <a class="pagecard reveal" href="writing.html">
+        <h3>Writing</h3>
+        <p>Samstack, the Fieldbuilders Blog, and occasional longer pieces.</p>
+        <span class="go">Read →</span>
+      </a>
+      <a class="pagecard reveal" href="projects.html">
+        <h3>Projects</h3>
+        <p>Tools and experiments — idea capture, AI timelines, day design.</p>
+        <span class="go">Browse →</span>
+      </a>
+    </div>
   </section>
 </div>
 
 <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true" style="background:#f6e69c">
-  <path d="M0 72 C220 40 460 100 720 68 C980 38 1240 90 1440 58 L1440 120 L0 120 Z" fill="#faf5e9"/>
+  <path class="under" d="M-240 68 L0 68 C280 100 520 30 780 65 C1040 98 1260 50 1440 78 L1680 78 L1680 260 L-240 260 Z" fill="#2e2a33" fill-opacity="0.5" transform="translate(80 -12)"/>
+  <path class="main" d="M-240 68 L0 68 C280 100 520 30 780 65 C1040 98 1260 50 1440 78 L1680 78 L1680 260 L-240 260 Z" fill="#2e2a33"/>
 </svg>
 
-<div class="band-cream">
-  <section class="inner">
-    <h2>Writing</h2>
-    <p style="margin-bottom:16px;">I write at <a href="https://sdms2005.substack.com/">Samstack</a> and contribute to the <a href="https://fieldbuilders.substack.com/">Fieldbuilders Blog</a>.</p>
-    <ul class="rows">
-      <li><span class="grow"><a href="https://docs.google.com/document/d/1dkTsAObuIuDlO6MzcIApWamaXWFVQyk-lD1k3ougWOw/edit?tab=t.0#heading=h.fxeegmxedylt">Sam's Career Memo</a></span><span class="meta">Feb 2026</span></li>
-      <li><span class="grow"><a href="https://docs.google.com/document/d/1_gLhrcRXKfF56BW9A5Hanfbn1QyzPZ1JGap0Dik2nH4/edit?tab=t.6rext7ock3e#heading=h.w9ijn6rtl5yq">Meta Field Strategy Doc</a></span><span class="meta">Feb 2026</span></li>
-      <li><span class="grow"><a href="https://forum.effectivealtruism.org/posts/agFxcinYtBqjDgCNk/sam-s-hot-takes-on-ea-community-building">Hot Takes on EA Community Building</a></span><span class="meta">Sep 2025</span></li>
-      <li><span class="grow"><a href="https://docs.google.com/document/d/1PQtZUdHheRI2ToK2wO-T0kseoH8MrLVArxvrcnifDT0/edit?tab=t.0#heading=h.7grltst8ucg2">Beyond the Resume</a></span><span class="meta">Jun 2025</span></li>
-    </ul>
-  </section>
-</div>
-
-<svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true" style="background:#faf5e9">
-  <path d="M0 68 C280 100 520 30 780 65 C1040 98 1260 50 1440 78 L1440 120 L0 120 Z" fill="#2e2a33"/>
-</svg>
-
-<footer>
+<footer id="contact">
   <div class="inner">
+    <h2>Say hi</h2>
     <div class="links">
-      <a href="mailto:sdms2005@gmail.com">Email</a>
+      <button type="button" data-copy="sdms2005@gmail.com">Email</button>
       <a href="https://www.linkedin.com/in/sam-smith%F0%9F%94%B8-617315227/">LinkedIn</a>
       <a href="https://github.com/CrazyMage01">GitHub</a>
     </div>
-    <p class="pledge">🔸 Giving What We Can 10% pledger</p>
+    <p class="pledge">🔸 <a href="https://www.givingwhatwecan.org/">Giving What We Can</a> 10% pledger</p>
   </div>
 </footer>
 
-<!-- Font switcher — delete before shipping, then hard-code picks into :root -->
-<div id="switcher">
-  <label>heading
-    <select id="head-sel">
-      <option value="'Fraunces', serif">Fraunces</option>
-      <option value="'DM Serif Display', serif">DM Serif Display</option>
-      <option value="'Nunito', sans-serif">Nunito</option>
-      <option value="'Outfit', sans-serif">Outfit</option>
-      <option value="'Sora', sans-serif">Sora</option>
-      <option value="'Space Grotesk', sans-serif">Space Grotesk</option>
-    </select>
-  </label>
-  <label>body
-    <select id="body-sel">
-      <option value="'Sora', sans-serif">Sora</option>
-      <option value="'Outfit', sans-serif">Outfit</option>
-      <option value="'Nunito', sans-serif">Nunito</option>
-      <option value="'Space Grotesk', sans-serif">Space Grotesk</option>
-      <option value="'Fraunces', serif">Fraunces</option>
-    </select>
-  </label>
-  <span class="hint">pick fonts, then delete this panel</span>
-</div>
-
-<script>
-  const root = document.documentElement.style;
-  document.getElementById('head-sel').onchange = e => root.setProperty('--heading-font', e.target.value);
-  document.getElementById('body-sel').onchange = e => root.setProperty('--body-font', e.target.value);
-
-  // Waves rise as they scroll into view (scrubbed: reversing scroll lowers them again)
-  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const waves = [...document.querySelectorAll('svg.wave path')];
-    let ticking = false;
-    const update = () => {
-      ticking = false;
-      const vh = innerHeight;
-      for (const path of waves) {
-        const top = path.ownerSVGElement.getBoundingClientRect().top;
-        // 0 when the wave is at the bottom edge of the viewport, 1 once it has
-        // climbed 60% of the way up; clamped so off-screen waves sit fully down/up
-        const t = Math.min(1, Math.max(0, (vh - top) / (vh * 0.6)));
-        const eased = 1 - Math.pow(1 - t, 3);
-        path.setAttribute('transform', `translate(0 ${((1 - eased) * 120).toFixed(2)})`);
-      }
-    };
-    const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
-    addEventListener('scroll', onScroll, { passive: true });
-    addEventListener('resize', onScroll, { passive: true });
-    update();
-  }
-</script>
+<script src="js/waves.js"></script>
 </body>
 </html>

@@ -1,0 +1,169 @@
+:root {
+  --lavender: #cbbcec;
+  --cream: #faf5e9;
+  --butter: #f6e69c;
+  --charcoal: #2e2a33;
+  --heading-font: 'Unbounded', sans-serif;
+  --body-font: 'Sora', sans-serif;
+  --h1-weight: 900;
+  --h2-weight: 500;
+  --max: 640px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--lavender);
+  color: var(--charcoal);
+  font-family: var(--body-font);
+  font-size: 16.5px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.inner { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+/* Hero / page headers */
+header { padding: 26px 0 12px; position: relative; overflow: hidden; }
+h1 {
+  font-family: var(--heading-font);
+  font-weight: var(--h1-weight, 900);
+  font-size: clamp(2.2rem, 7.5vw, 3.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.tagline { margin-top: 16px; opacity: 0.8; max-width: 44ch; }
+.crumb { margin-bottom: 14px; font-size: 0.9em; }
+.crumb a { opacity: 0.7; }
+
+/* Wave dividers */
+.wave { display: block; width: 100%; height: 14vh; margin-bottom: -1px; }
+/* first divider is shorter: it's mostly risen on load, keeping the header tight */
+.wave:first-of-type { height: 12vh; }
+.wave path { will-change: transform; }
+@media (max-width: 480px) { .wave { height: 12vh; } .wave:first-of-type { height: 10vh; } }
+
+/* Bands */
+.band-cream  { background: var(--cream); }
+.band-butter { background: var(--butter); }
+.band-cream, .band-butter { position: relative; overflow: hidden; }
+/* note: sections carry no vertical padding (.inner wins specificity);
+   band breathing room comes from the wave svgs above/below them */
+section { position: relative; }
+
+h2 {
+  font-family: var(--heading-font);
+  font-weight: var(--h2-weight, 500);
+  font-size: 1.55rem;
+  margin-bottom: 18px;
+}
+
+p + p { margin-top: 1em; }
+
+/* skip-ink:none + generous offset keep the hover squiggle continuous,
+   clearing descenders (g, y, p) instead of being broken by them */
+a {
+  color: inherit;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.32em;
+  text-decoration-skip-ink: none;
+}
+a:hover { text-decoration-style: wavy; }
+
+/* Bullet lists */
+ul.plain { list-style: none; }
+ul.plain li { padding: 8px 0 8px 26px; position: relative; }
+ul.plain .role { font-weight: 600; }
+ul.plain .tag { display: block; font-size: 0.88em; opacity: 0.65; }
+ul.plain li::before {
+  content: "";
+  position: absolute;
+  left: 4px; top: 0.72em;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--lavender);
+}
+.band-butter ul.plain li::before { background: var(--cream); }
+
+/* Row lists (projects, writing) */
+ul.rows { list-style: none; }
+ul.rows li {
+  padding: 13px 0;
+  border-bottom: 1.5px solid color-mix(in srgb, var(--charcoal) 22%, transparent);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  align-items: baseline;
+}
+ul.rows li:first-child { border-top: 1.5px solid color-mix(in srgb, var(--charcoal) 22%, transparent); }
+ul.rows .grow { flex: 1; min-width: 180px; }
+ul.rows .meta { opacity: 0.65; font-size: 0.9em; white-space: nowrap; }
+
+.pill {
+  font-size: 0.72em;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--lavender);
+  white-space: nowrap;
+}
+.band-butter .pill { background: var(--cream); }
+
+.updated { margin-top: 18px; opacity: 0.55; font-size: 0.85em; font-style: italic; }
+
+/* Page cards (home → subpages) */
+.pagecards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+.pagecard {
+  display: block;
+  background: var(--cream);
+  border-radius: 14px;
+  padding: 20px 22px;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.pagecard h3 { font-family: var(--heading-font); font-weight: 500; font-size: 1.1rem; margin-bottom: 8px; }
+.pagecard p { font-size: 0.92em; opacity: 0.75; }
+.pagecard .go { display: inline-block; margin-top: 12px; font-size: 0.85em; font-weight: 600; transition: transform 0.25s ease; }
+.pagecard:hover { transform: translateY(-4px) rotate(-0.6deg); box-shadow: 0 10px 24px color-mix(in srgb, var(--charcoal) 18%, transparent); }
+.pagecard:hover .go { transform: translateX(4px); }
+
+/* Footer / contact */
+footer { background: var(--charcoal); color: var(--cream); padding: 40px 0 64px; }
+footer h2 { color: var(--cream); }
+footer .links { display: flex; gap: 12px; flex-wrap: wrap; margin: 6px 0 18px; }
+footer .links a,
+footer .links button {
+  color: var(--butter);
+  border: 1.5px solid color-mix(in srgb, var(--butter) 55%, transparent);
+  border-radius: 999px;
+  padding: 7px 16px;
+  text-decoration: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+footer .links a:hover,
+footer .links button:hover { background: var(--butter); color: var(--charcoal); transform: translateY(-2px); }
+footer .pledge { opacity: 0.7; font-size: 0.9em; }
+
+/* Floating decorations */
+.deco {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: floaty 14s ease-in-out infinite alternate;
+}
+@keyframes floaty {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(14px, 22px); }
+}
+
+/* Scroll reveal (only when JS is running) */
+html.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+html.js .reveal.visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .deco { animation: none; }
+  html.js .reveal { opacity: 1; transform: none; transition: none; }
+}

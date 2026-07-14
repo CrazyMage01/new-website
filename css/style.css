@@ -73,6 +73,9 @@ a {
 }
 a:hover { text-decoration-style: wavy; }
 
+/* easter-egg links: indistinguishable from plain text, pointer cursor is the only tell */
+a.stealth, a.stealth:hover { text-decoration: none; }
+
 /* Bullet lists */
 ul.plain { list-style: none; }
 ul.plain li { padding: 8px 0 8px 26px; position: relative; }

@@ -1,0 +1,68 @@
+/* Professional home: single column, one accent, no decoration. */
+:root {
+  --ink: #2e2a33;
+  --muted: #6b6572;
+  --rule: #e6e1ea;
+  --accent: #6f4fb3;
+  --bg: #ffffff;
+  --max: 620px;
+  --body-font: 'Sora', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body { overflow-x: hidden; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--body-font);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+main { max-width: var(--max); margin: 0 auto; padding: 64px 24px 72px; }
+
+a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
+a:hover { border-bottom-color: currentColor; }
+
+h1 { font-size: 2rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; }
+.lede { margin-top: 10px; font-size: 1.15rem; color: var(--muted); max-width: 48ch; }
+
+h2 {
+  margin-top: 44px;
+  padding-bottom: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--rule);
+}
+
+p { margin-top: 14px; }
+
+ul { list-style: none; margin-top: 12px; }
+li { padding: 9px 0; border-bottom: 1px solid var(--rule); }
+li:last-child { border-bottom: 0; }
+.row { display: flex; gap: 16px; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
+.role { font-weight: 600; }
+.meta { color: var(--muted); font-size: 0.93rem; }
+.note { display: block; color: var(--muted); font-size: 0.93rem; margin-top: 2px; }
+
+.links { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 12px; }
+button.copy {
+  font: inherit; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer;
+  border-bottom: 1px solid transparent;
+}
+button.copy:hover { border-bottom-color: currentColor; }
+
+footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.9rem; }
+footer a { color: var(--muted); }
+
+@media (max-width: 480px) {
+  main { padding: 40px 20px 56px; }
+  h1 { font-size: 1.7rem; }
+  .row { flex-direction: column; gap: 2px; }
+}

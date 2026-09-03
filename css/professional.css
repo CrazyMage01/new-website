@@ -2,9 +2,9 @@
 :root {
   --ink: #2e2a33;
   --muted: #6b6572;
-  --rule: #e7dfcf;
+  --rule: #e1dee8;
   --accent: #6f4fb3;
-  --bg: #faf5e9;
+  --bg: #f5f4f8;
   --max: 620px;
   --body-font: 'Sora', system-ui, -apple-system, 'Segoe UI', sans-serif;
 }

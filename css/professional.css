@@ -68,3 +68,26 @@ footer a { color: var(--muted); }
   .photo { width: 96px; height: 96px; }
   .row { flex-direction: column; gap: 2px; }
 }
+
+/* ---- Theme variants for review (pick one, delete the rest) ---- */
+
+/* A: lilac wash, Unbounded headline */
+body.theme-a { --bg: #efeaf8; --rule: #dcd3ea; --accent: #5e3fa6; }
+body.theme-a h1 { font-family: 'Unbounded', var(--body-font); font-weight: 900; font-size: 2.3rem; }
+body.theme-a h2 { color: var(--accent); border-bottom-color: var(--accent); opacity: 0.85; }
+
+/* B: charcoal header band, light body */
+body.theme-b { --bg: #f5f4f8; }
+body.theme-b .hero { background: #2e2a33; color: #faf5e9; margin: -64px -24px 0; padding: 64px 24px 44px; }
+body.theme-b .hero .lede { color: #cfc5e6; }
+body.theme-b .hero h1 { font-family: 'Unbounded', var(--body-font); font-weight: 900; font-size: 2.3rem; color: #fff; }
+body.theme-b .photo { box-shadow: 0 0 0 4px #a98bd9; }
+body.theme-b h2 { color: #5e3fa6; border-bottom-color: #a98bd9; }
+@media (max-width: 480px) { body.theme-b .hero { margin: -40px -20px 0; padding: 40px 20px 32px; } }
+
+/* C: purple page, cream card */
+body.theme-c { background: #a98bd9; }
+body.theme-c main { background: #faf5e9; margin: 40px auto; padding: 52px 40px 60px; border-radius: 18px; box-shadow: 0 12px 40px rgba(46,42,51,0.18); }
+body.theme-c h1 { font-family: 'Unbounded', var(--body-font); font-weight: 900; font-size: 2.3rem; }
+body.theme-c { --rule: #e7dfcf; --accent: #5e3fa6; }
+@media (max-width: 480px) { body.theme-c main { margin: 16px; padding: 36px 22px 44px; } }
